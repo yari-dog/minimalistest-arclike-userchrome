@@ -1,0 +1,83 @@
+#nav-bar {
+	position: relative;
+	z-index: 2;
+	max-height: 0px;
+	opacity: 0;
+	transition: all 115ms ease !important;
+	background-color: #00000000 !important;
+	padding-top: 10px !important;
+}
+
+#navigator-toolbox {
+  position:fixed !important;
+  min-width: 100% !important;
+  z-index: 1 !important;
+  background-color: #00000000 !important;
+  border: none !important;
+}
+
+#nav-bar:hover {
+	opacity: 100%;
+	max-height: var(--nav-bar-height);
+}
+
+#nav-bar:has(#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused])){
+	opacity: 100%;
+}
+
+
+#PanelUI-button {
+  -moz-box-ordinal-group: 0 !important;
+  order: -2 !important;
+  margin: 2px !important;
+  display: none !important;
+}
+
+/* Window control buttons (min, resize and close) */
+.titlebar-buttonbox-container {
+  display: none !important;
+  margin-right: 12px !important;
+}
+
+/* Page back and foward buttons */
+#back-button,
+#forward-button
+{
+  display: none !important
+}
+
+/* Extensions button */
+#unified-extensions-button {
+    position: absolute !important;
+    opacity: 0 !important;
+  size: 1px !important;
+	right:0 !important;
+}
+
+/* Extension name inside URL bar */
+#identity-box.extensionPage #identity-icon-label {
+  visibility: collapse !important
+}
+
+/* All tabs (v-like) button */
+#alltabs-button {
+  display: none !important
+}
+
+/* URL bar icons */
+#identity-permission-box,
+#star-button-box,
+#identity-icon-box,
+#picture-in-picture-button,
+#tracking-protection-icon-container,
+#reader-mode-button,
+#translations-button
+{
+  display: none !important
+}
+
+/* "This time search with:..." */
+#urlbar .search-one-offs {
+  display: none !important
+}
+

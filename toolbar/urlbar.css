@@ -1,0 +1,159 @@
+:root {
+  --urlbar-min-height: 24px !important;
+  --urlbarView-item-inline-padding: calc(1px + var(--uc-urlbar-inline-padding) + var(--uc-urlbar-icon-inline-padding)) !important;
+  --urlbar-icon-border-radius: 99px !important;
+  --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
+  --urlbar-margin-inline: 2px !important;
+  --identity-box-margin-inline: 6px !important;
+  --uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding));
+  --uc-urlbar-inline-padding: 6px;
+  --uc-urlbar-block-padding: 6px;
+  --uc-urlbar-shadow: 0 0 0px rgb(0 0 0 / .1);
+   --urlbarView-rich-suggestion-default-icon-size: 32px !important;
+
+  /* urlbar height */
+  & #urlbar-container {
+    --urlbar-container-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
+  }
+
+  & #urlbar {
+    --urlbar-toolbar-height: calc(5px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-min-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    font-size: 1em !important;
+  }
+  --urlbarView-highlight-background: #928374 !important;
+  --toolbar-field-focus-border-color: transparent !important; 
+}
+
+/* Appearance for URL bar. */
+#urlbar-background,
+#searchbar {
+  border-radius: 8px !important;
+  border-color: transparent !important;
+  box-shadow: 0px 0px 10px #1d2021 !important;
+  /* Appearance when the URL bar is expanded. */
+  #urlbar:is([open], [usertyping][focused]) & {
+    border-radius: 8px !important;
+    border-color: transparent !important;
+    outline: 0px solid var(--arrowpanel-border-color) !important;
+    outline-color: transparent !important;
+  }
+}
+
+
+#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused]) {
+    #urlbar-input {
+      font-size: 16px !important;
+      text-align: left !important;
+    }
+    #urlbar-input-container {
+      height: auto !important;
+      padding-block: var(--urlbar-block-padding) !important;
+      padding-inline: var(--urlbar-inline-padding) !important;
+    }
+    #urlbar-go-button {
+      margin: auto !important;
+    }
+    
+    z-index: 1;
+    position: fixed !important;
+    padding-block: 12px!important;
+    --urlbar-height: auto !important;
+    bottom: auto !important;
+    top: 20vh !important;
+    padding-left: 6px !important;
+    padding-right: 8px !important;
+    background-color: #toolbar-bgcolor !important;
+    
+    left: 18vw !important;
+    right: 18vw !important;
+    width: 64vw !important;
+    
+    & .urlbarView-results {
+      margin-top: 12px !important;
+      padding-block-start: 0px !important;
+    }    
+	box-shadow: 0px 0px 15px #000 !important;
+  }
+
+  /* background */
+  #nav-bar:has(#urlbar:is([breakout][breakout-extend], [breakout][usertyping][focused])){
+    /* created as :after so that elements to the right of 
+       urlbar will be covered properly */
+    &:after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      
+      width: 100vw;
+      height: 100vh;
+      
+      top: 0px;
+      left: 0px;
+      
+      background-color: #000000; !important;
+      opacity: 0.5;
+      backdrop-filter: blur(300px);
+    }
+  }
+
+.search-one-offs {
+	display: none;
+}
+
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder {
+  opacity: 0.6 !important;
+}
+
+/* Remove border between URL bar input and suggestions. */
+#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+  border-top: 0 !important;
+  align: center !important;
+}
+
+/* Add padding to sides of URL bar. */
+#urlbar-input-container,
+#searchbar {
+  padding-inline: var(--uc-urlbar-inline-padding) !important;
+}
+
+#urlbar-background {background: var(--arrowpanel-background) !important;}
+
+
+/* URL bar suggestions container. */
+.urlbarView {
+  margin-top: 2px !important;
+  margin-inline: 0 !important;
+  width: 100% !important;
+  border-inline: 0 !important;
+  padding-block: 0 !important;
+  padding: 7px !important;
+  background: var(--arrowpanel-background) !important;
+  border-radius: 0 0 8px 8px !important;
+
+  & .urlbarView-body-inner {
+    width: 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  /* Remove padding from top of URL bar results, not needed as URL bar input already has padding. */
+  & .urlbarView-results {
+    padding-block-start: 0 !important;
+  }
+}
+
+/* URL bar item. */
+.urlbarView-row {
+  padding-block: 0 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  margin-inline: 2px !important;
+  
+  /* Vertically align search suggestion thumbnail images. */
+  &[rich-suggestion] > .urlbarView-row-inner > .urlbarView-favicon {
+    margin-inline-start: calc(var(--urlbarView-icon-margin-start) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2) !important;
+    margin-inline-end: calc(var(--urlbarView-icon-margin-end) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2) !important;
+  }
+}

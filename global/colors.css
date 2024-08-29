@@ -1,0 +1,30 @@
+:root {
+	--newtab-background-color: #282828 !important;
+	--newtab-background-color-secondary: #3c3836 !important;
+	--newtab-text-primary-color: #ebdbb2 !important;
+	--newtab-primary-action-background: transparent !important;
+	--in-content-page-color: #ebdbb2 !important;
+	--background-color-canvas: #282828 !important;
+	
+}
+:root {
+	::selection {
+		background-color: #ebdbb2 !important;
+	}
+	::visited {
+		color: #689d6a !important;
+	}
+	a {
+		color: #8ec07c !important;
+	}
+	.assigned-label-transphobic, a.assigned-label-transphobic {
+		color: #fb4934 !important;
+	}
+	
+	.assigned-label-t-friendly, a.assigned-label-t-friendly{
+		color: #d3869a !important;
+	}
+}
+.browserStack {
+	background-color: #282828 !important;
+}

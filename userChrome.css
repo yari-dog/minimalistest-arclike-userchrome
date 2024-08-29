@@ -1,0 +1,8 @@
+@import url("toolbar/navbar.css");
+@import url("toolbar/tabbar.css");
+@import url("toolbar/urlbar.css");
+@import url("global/colors.css");
+@import url("custom/sidebar.css");
+@import url("tweaks/extensions.css");
+
+:root {font-family: "DejavuSansM" !important;}
