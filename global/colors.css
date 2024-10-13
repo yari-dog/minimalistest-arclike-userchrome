@@ -15,14 +15,14 @@
 		color: #689d6a !important;
 	}
 	a {
-		color: #8ec07c !important;
+		color: #d3869a;
 	}
 	.assigned-label-transphobic, a.assigned-label-transphobic {
 		color: #fb4934 !important;
 	}
 	
 	.assigned-label-t-friendly, a.assigned-label-t-friendly{
-		color: #d3869a !important;
+		color: #8ec07c !important;
 	}
 }
 .browserStack {
